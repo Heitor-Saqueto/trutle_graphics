@@ -1,3 +1,4 @@
+import turtle
 from turtle import Turtle, Screen
 import random
 
@@ -25,11 +26,18 @@ teddy.shape("classic")
 
 ##------------BETTER WAY TO DO IT---------------------------------------------
 
-def pick_color():
-    colors = ["red", "blue", "yellow", "green", "purple", "white",  "orange", "darkgreen", "magenta4", "black", "gray", "pink", "lightblue", "darkred"]
-    random.shuffle(colors)
-    return colors[0]
+turtle.colormode(255)
 
+
+#def random_color generate a random number and returns a tuple o rgb
+
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    rgb = (r, g, b)
+    return rgb
 # def draw_shape(num_sides):
 #     angle = 360 / num_sides
 #     for _ in range(num_sides):
@@ -86,13 +94,13 @@ degree = [0, 90, 180, 270]
 
 def random_move_f(random_n):
     teddy.setheading(random_n)
-    teddy.color(pick_color())
+    teddy.color(random_color())
     teddy.pensize(20)
     teddy.speed(0)
-    teddy.forward(20)
+    teddy.forward(50)
 
 
-for _ in range(100):
+for _ in range(500):
     num = random.choice(degree)
     random_move_f(num)
 
