@@ -1,7 +1,6 @@
 import turtle
 from turtle import Turtle, Screen
 import random
-
 # here is where we import the Turtle and the screen from the lib turtle...
 teddy = Turtle()
 # we are going to call it teddy ...
@@ -9,10 +8,7 @@ teddy = Turtle()
 # above you can check the turtle library to see what you can do with it.
 # I truly recommend You to do that!!!
 # GUI is the same of Graphical User Interface
-
 teddy.shape("classic")
-
-
 # This block of code will draw a dash line.
 # for _ in range(50):
 #   teddy.forward(5)
@@ -20,24 +16,20 @@ teddy.shape("classic")
 #   teddy.forward(5)
 #   teddy.pendown()
 # the calcul to know the angle is 360° / number of lines... triangle 360/3 = 120 <-
-
-
 #------CHALLENGE TO  DRAW SOME FORMS AS TRIANGLE ETC WITH DIFERENT COLORS-----------
 
 ##------------BETTER WAY TO DO IT---------------------------------------------
 
 turtle.colormode(255)
 
-
 #def random_color generate a random number and returns a tuple o rgb
-
 
 def random_color():
     r = random.randint(0, 255)
     g = random.randint(0, 255)
     b = random.randint(0, 255)
-    rgb = (r, g, b)
-    return rgb
+    color = (r, g, b)
+    return color
 # def draw_shape(num_sides):
 #     angle = 360 / num_sides
 #     for _ in range(num_sides):
@@ -91,21 +83,16 @@ def random_color():
 ##------CHALLENGE DRAW A RANDOM WALK WITH COLORS
 degree = [0, 90, 180, 270]
 
-
 def random_move_f(random_n):
     teddy.setheading(random_n)
     teddy.color(random_color())
     teddy.pensize(20)
-    teddy.speed(0)
+    teddy.speed('fastest')
     teddy.forward(50)
-
 
 for _ in range(500):
     num = random.choice(degree)
     random_move_f(num)
-
-
-
 
 screen = Screen()
 screen.exitonclick()
